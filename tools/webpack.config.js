@@ -21,7 +21,7 @@ const baseConfig = {
     noParse: [],
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         loader: 'babel',
         exclude: /(node_modules|bower_components)/,
         query: {
@@ -39,7 +39,7 @@ const baseConfig = {
   resolve: {
     moduleDirectories: [],
     root: [path.resolve('./node_modules')],
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js']
   },
   plugins: basePlugins,
   bail: !__DEV__
@@ -109,7 +109,7 @@ if (!__DEV__) {
 const clientConfig = merge.smart(baseConfig, {
   devtool: __DEV__ ? '#eval' : '#source-map',
   entry: {
-    bundle: ['babel-polyfill', './src/client/index.jsx']
+    bundle: ['babel-polyfill', './src/client/index.js']
   },
   module: {
     loaders: [
