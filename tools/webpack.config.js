@@ -1,3 +1,5 @@
+"use strict";
+
 // Don't use ES6 here to stay compatible with ESLint plugins
 
 const webpack = require('webpack');
@@ -7,7 +9,7 @@ const merge = require('webpack-merge');
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
-global.__DEV__ = process.argv.length >= 3 && process.argv[2] === 'watch';
+global.__DEV__ = process.env.NODE_ENV !== "production";
 const buildNodeEnv = __DEV__ ? 'development' : 'production';
 
 let basePlugins = [];
@@ -127,7 +129,5 @@ const clientConfig = merge.smart(baseConfig, {
   plugins: clientPlugins
 });
 
-module.exports = 
-  process.env.npm_lifecycle_script.indexOf('mocha-webpack') >= 0 ? 
-    serverConfig : 
-    [ serverConfig, clientConfig ];
+module.exports = process.env.npm_lifecycle_script.indexOf('mocha-webpack') >= 0 ?
+    serverConfig : [ serverConfig, clientConfig ];

@@ -18,7 +18,8 @@
     "clean": "rm -rf $npm_package_app_frontendBuildDir $npm_package_app_backendBuildDir",
     "start": "if [ \"$NODE_ENV\" = production ]; then node --harmony $npm_package_app_backendBuildDir; else babel-node tools/webpack.run watch; fi",
     "test": "mocha-webpack --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint",
-    "lint": "eslint --fix --ext js --ext jsx src",
+    "test:watch": "mocha-webpack -w --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint",
+    "lint": "eslint --fix --ext js src",
     "seed": "knex seed:run",
     "migrate": "knex migrate:latest",
     "postinstall": "if [ \"$NODE_ENV\" = production ]; then npm run clean && npm run build && npm run migrate && npm run seed; fi"
