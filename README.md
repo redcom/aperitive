@@ -16,6 +16,7 @@ A starter for developing react, graphql, apollo applications. Based on apollo-fu
   ```
 It reads docker-compose.yml and starts a container with Mongodb
 
+I choose Aperitive name because it has a stimulating effect on the appetite for coding dreams.
 
 ## License
 Copyright © 2016 This source code is licensed under the [MIT] license.
