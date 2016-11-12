@@ -144,7 +144,6 @@ function startServer() {
 
 function startWebpackDevServer(clientConfig, reporter) {
   let compiler = webpack(clientConfig);
-
   compiler.plugin('done', stats => {
     const dir = process.env.npm_package_app_frontendBuildDir;
     createDirs(dir);

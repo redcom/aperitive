@@ -1,0 +1,189 @@
+/* GLOBAL MIXINS */
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+@mixin ui-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+/* Typography */
+
+$ui-font-weight-light: 300;
+$ui-font-weight-normal: 400;
+$ui-font-weight-medium: 500;
+
+
+@mixin ui-type-display-4() {
+  font-family: Roboto, sans-serif;
+  font-size:   112px;
+  line-height: 128px;
+  letter-spacing: -7px;
+  padding-top: 17px;
+  margin-bottom: 15px;
+  font-weight: $ui-font-weight-light;
+  color: $ui-light-secondary;
+}
+
+@mixin ui-type-display-3() {
+  font-family: Roboto, sans-serif;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -2px;
+  padding-top: 8px;
+  margin-bottom: 28px;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-secondary;
+}
+
+@mixin ui-type-display-2() {
+  font-family: Roboto, sans-serif;
+  font-size: 45px;
+  line-height: 48px;
+  margin-bottom: 11px;
+  letter-spacing: -1px;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-secondary;
+}
+
+@mixin ui-type-display-1() {
+  font-family: Roboto, sans-serif;
+  font-size: 34px;
+  line-height: 40px;
+  padding-top: 8px;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-secondary;
+}
+
+@mixin ui-type-headline() {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  padding-top: 16px;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-title() {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  padding-top: 19px;
+  margin-bottom: 13px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-subhead-2() {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  padding-top: 2px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-subhead-1() {
+  @include ui-type-subhead-2();
+  line-height: 24px;
+  padding-top: 3px;
+  margin-bottom: 13px;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-body-2() {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  padding-top: 4px;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-body-1() {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 6px;
+  margin-bottom: 14px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-caption() {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  padding-top: 6px;
+  margin-bottom: 14px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-secondary;
+}
+
+@mixin ui-type-menu() {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  padding-top: 6px;
+  margin-bottom: 14px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-nav-menu() {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-button() {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 5px;
+  margin-bottom: 15px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-light-text;
+}
+
+@mixin ui-type-tooltip() {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 22px;
+  padding: 0;
+  letter-spacing: 0;
+  font-weight: $ui-font-weight-medium;
+  color: $ui-dark-text;
+}
+
+@mixin ui-type-label() {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: $ui-field-label-line-height;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-hint;
+}
+
+@mixin ui-type-input() {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: $ui-font-weight-normal;
+  color: $ui-light-text;
+}
