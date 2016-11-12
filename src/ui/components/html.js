@@ -10,8 +10,7 @@ const Html = ({ content, state, assetMap, aphroditeCss }) => {
       {!__DEV__ && <link rel="stylesheet" type="text/css" href={`/assets/${assetMap['bundle.css']}`} />}
       {__DEV__ &&
         <style dangerouslySetInnerHTML={{ __html:
-          require('../styles.scss')._getCss() +
-          require('../bootstrap.scss')._getCss()
+          require('../styles.scss')._getCss()
         }}/>
       }
       <link rel="shortcut icon" href="/favicon.ico"/>

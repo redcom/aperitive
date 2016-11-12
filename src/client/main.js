@@ -9,7 +9,6 @@ import addGraphQLSubscriptions from './subscriptions'
 import routes from '../routes'
 import { app as settings} from '../../package.json'
 
-import '../ui/bootstrap.scss'
 import '../ui/styles.scss'
 
 const wsClient = new Client(window.location.origin.replace(/^http/, 'ws')

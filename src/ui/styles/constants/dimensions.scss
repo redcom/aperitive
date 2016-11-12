@@ -1,0 +1,77 @@
+$ui-increment-size: 64px;
+$ui-icon-size: 24px;
+$ui-avatar-size: 40px;
+$ui-min-target-size: 48px;
+$ui-margin-keyline: 24px;
+$ui-content-keyline: 80px;
+
+
+$ui-button-h: 36px;
+$ui-button-outer-padding-w: 4px;
+$ui-button-outer-padding-h: ($ui-min-target-size - $ui-button-h) / 2;
+$ui-button-inner-padding-w: 8px;
+$ui-button-min-width: 64px;
+
+$ui-fab-size: 56px;
+$ui-fab-mini-size: 40px;
+
+$ui-icon-button-size: $ui-min-target-size;
+
+$ui-tooltip-inner-padding-w: 8px;
+
+// Overhanging appbars are equal to default height plus increment size. On
+// desktop/tablet these are the same, but are different on mobile,
+$ui-app-bar-h: 64px;
+$ui-app-bar-inner-padding-w: $ui-margin-keyline - ($ui-icon-button-size - $ui-icon-size)/2;
+$ui-app-bar-inner-padding-h: ($ui-app-bar-h - $ui-min-target-size)/2;
+$ui-app-bar-title-padding-w: $ui-content-keyline - $ui-app-bar-inner-padding-w - $ui-icon-button-size;
+
+$ui-nav-drawer-w: $ui-increment-size * 4;
+
+$ui-nav-menu-item-h: 48px;
+$ui-nav-menu-inner-padding-h: 8px;
+$ui-nav-menu-inner-padding-w: $ui-margin-keyline;
+
+$ui-menu-inner-padding-h: 16px;
+$ui-menu-inner-padding-w: $ui-margin-keyline;
+$ui-menu-item-h: 32px;
+$ui-menu-divider-h: 16px;
+
+$ui-field-padding-top: 16px;
+$ui-field-label-padding-bottom: 8px;
+$ui-field-label-line-height: 16px;
+$ui-field-line-h: 16px;
+
+
+//
+// Lists
+//
+
+// Spacing between list elements and the list edges
+$ui-list-inner-padding-h: 8px;
+$ui-list-inner-padding-w: $ui-margin-keyline;
+
+// The minimum spacing between list content elements
+$ui-list-inner-gutter: 16px;
+
+// The total height of a list divider
+$ui-list-divider-h: 16px;
+
+// The amount of space above content aligned to top of tile
+$ui-list-align-top-padding: 16px;
+
+// The possible heights of list content elements
+$ui-list-cell-h-single: 48px;
+$ui-list-cell-h-avatar: 56px;
+$ui-list-cell-h-double: 72px;
+$ui-list-cell-h-triple: 88px;
+
+// Dimensions for actual list content elements
+$ui-list-text-1-padding-top: 16px;
+
+$ui-list-text-2-padding-top: 20px;
+$ui-list-text-2-padding-bottom: 20px;
+
+$ui-list-text-3-padding-top: 16px;
+$ui-list-text-3-padding-bottom: 20px;
+
