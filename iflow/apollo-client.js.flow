@@ -1,0 +1,5 @@
+declare module 'apollo-client' {
+  declare class ApolloClient {
+    constructor(): this;
+  }
+}
