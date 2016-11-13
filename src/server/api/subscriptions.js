@@ -1,5 +1,5 @@
-import { SubscriptionManager } from 'graphql-subscriptions'
-import schema, { pubsub } from './schema'
+import { SubscriptionManager } from 'graphql-subscriptions';
+import schema, { pubsub } from './schema';
 
 const subscriptionManager = new SubscriptionManager({
   schema,
@@ -7,8 +7,8 @@ const subscriptionManager = new SubscriptionManager({
   setupFunctions: {
     countUpdated: () => ({
       // Run the query each time count updated
-      countUpdated: () => true
-    })
+      countUpdated: () => true,
+    }),
   },
 });
 

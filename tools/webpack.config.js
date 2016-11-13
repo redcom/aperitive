@@ -27,9 +27,8 @@ const baseConfig = {
         loader: 'babel',
         exclude: /(node_modules|bower_components)/,
         query: {
-          cacheDirectory: __DEV__,
-          presets: ['es2015', 'es2017', 'react'],
-          plugins: ['transform-runtime', 'transform-decorators-legacy', 'transform-class-properties'],
+          cacheDirectory: './.tmp',
+          compact: true,
         },
       },
       { test: /\.json$/, loader: 'json' },
@@ -90,6 +89,7 @@ const serverConfig = merge.smart(baseConfig, {
 });
 
 let clientPlugins = [
+  new webpack.NoErrorsPlugin(),
   new ManifestPlugin({
     fileName: 'assets.json'
   }),

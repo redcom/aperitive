@@ -1,8 +1,8 @@
-import { makeExecutableSchema, addErrorLoggingToSchema } from 'graphql-tools'
-import { PubSub } from 'graphql-subscriptions'
+import { makeExecutableSchema, addErrorLoggingToSchema } from 'graphql-tools';
+import { PubSub } from 'graphql-subscriptions';
 
-import log from '../../log'
-import schema from './schema_def.graphqls'
+import log from '../../log';
+import schema from './schema_def.graphqls';
 
 export const pubsub = new PubSub();
 
@@ -16,7 +16,7 @@ const resolvers = {
     addCount(_, { amount }, context) {
       return context.Count.addCount(amount)
         .then(() => context.Count.getCount())
-        .then(count => {
+        .then((count) => {
           pubsub.publish('countUpdated', count);
           return count;
         });
@@ -25,8 +25,8 @@ const resolvers = {
   Subscription: {
     countUpdated(amount) {
       return amount;
-    }
-  }
+    },
+  },
 };
 
 const executableSchema = makeExecutableSchema({

@@ -1,13 +1,13 @@
-import { createServer } from 'http'
-import { SubscriptionServer } from 'subscriptions-transport-ws'
+import { createServer } from 'http';
+import { SubscriptionServer } from 'subscriptions-transport-ws';
 
-import { app as settings } from '../../package.json'
-import log from '../log'
+import { app as settings } from '../../package.json';
+import log from '../log';
 
 // Hot reloadable modules
-var subscriptionManager = require('./api/subscriptions').subscriptionManager;
+let subscriptionManager = require('./api/subscriptions').subscriptionManager;
 
-var server;
+let server;
 
 const port = process.env.WS_PORT || settings.wsPort;
 
@@ -21,11 +21,11 @@ server = websocketServer.listen(port, () => log(
 ));
 
 server.on('close', () => {
-  server = undefined;
+  server = null;
 });
 
 new SubscriptionServer({
-  subscriptionManager
+  subscriptionManager,
 }, websocketServer);
 
 if (module.hot) {
@@ -39,7 +39,8 @@ if (module.hot) {
     module.hot.accept();
 
     // Reload reloadable modules
-    module.hot.accept('./api/subscriptions', () => { subscriptionManager = require('./api/subscriptions').subscriptionManager; });
+    module.hot.accept('./api/subscriptions',
+      () => { subscriptionManager = require('./api/subscriptions').subscriptionManager; });
   } catch (err) {
     log(err.stack);
   }

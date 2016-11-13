@@ -1,5 +1,5 @@
-import log from '../log'
-import './api_server'
+import log from '../log';
+import './api_server';
 
 process.on('uncaughtException', (ex) => {
   log.error(ex);
@@ -7,7 +7,7 @@ process.on('uncaughtException', (ex) => {
 });
 
 if (module.hot) {
-  module.hot.status(event => {
+  module.hot.status((event) => {
     if (event === 'abort' || event === 'fail') {
       log('HMR error status: ' + event);
       // Signal webpack.run.js to do full-reload of the back-end

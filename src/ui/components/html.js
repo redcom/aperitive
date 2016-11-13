@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
 const Html = ({ content, state, assetMap, aphroditeCss }) => {
   return (
@@ -7,10 +7,16 @@ const Html = ({ content, state, assetMap, aphroditeCss }) => {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Apollo Fullstack Starter Kit</title>
-      {!__DEV__ && <link rel="stylesheet" type="text/css" href={`/assets/${assetMap['bundle.css']}`} />}
+      {!__DEV__ &&
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href={`/assets/${assetMap['bundle.css']}`}
+        />
+      }
       {__DEV__ &&
         <style dangerouslySetInnerHTML={{ __html:
-          require('../styles.scss')._getCss()
+          require('../styles.scss')._getCss(),
         }}/>
       }
       <link rel="shortcut icon" href="/favicon.ico"/>

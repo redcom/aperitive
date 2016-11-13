@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql, compose, withApollo } from 'react-apollo'
-import ApolloClient from 'apollo-client'
-import gql from 'graphql-tag'
-import update from 'react-addons-update'
-import { Row, Button } from 'react-bootstrap'
-import log from '../../log'
+import React from 'react';
+import { graphql, compose, withApollo } from 'react-apollo';
+import ApolloClient from 'apollo-client';
+import gql from 'graphql-tag';
+import update from 'react-addons-update';
+import { Row, Button } from 'react-bootstrap';
+import log from '../../log';
 
 const SUBSCRIPTION_QUERY = gql`
   subscription onCountUpdated {
@@ -35,8 +35,8 @@ class Counter extends React.Component {
       variables: {},
     }).subscribe({
       next(data) {
-        updateCountQuery(prev => {
-          let newAmount = data.countUpdated.amount;
+        updateCountQuery((prev) => {
+          const newAmount = data.countUpdated.amount;
           return update(prev, {
             count: {
               amount: {
@@ -62,7 +62,9 @@ class Counter extends React.Component {
       return (
         <Row className="text-center">
           <div>
-            Current count, is {count.amount}. This is being stored server-side in the database and using Apollo subscription for real-time updates.
+            Current count, is {count.amount}.
+            This is being stored server-side in the database and
+            using Apollo subscription for real-time updates.
           </div>
           <br />
           <Button bsStyle="primary" onClick={addCount(1)}>
@@ -104,7 +106,7 @@ export default withApollo(compose(
   graphql(AMOUNT_QUERY, {
     props({data: {loading, count, updateQuery}}) {
       return {loading, count, updateCountQuery: updateQuery};
-    }
+    },
   }),
   graphql(ADD_COUNT_MUTATION, {
     props: ({ ownProps, mutate }) => ({

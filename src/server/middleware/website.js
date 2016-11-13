@@ -1,24 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/server'
-import { createBatchingNetworkInterface } from 'apollo-client'
-import { ApolloProvider } from 'react-apollo'
-import { getDataFromTree } from 'react-apollo/server'
-import { match, RouterContext } from 'react-router'
-import { StyleSheetServer } from 'aphrodite'
-import fs from 'fs'
-import path from 'path'
+import React from 'react';
+import ReactDOM from 'react-dom/server';
+import { createBatchingNetworkInterface } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { getDataFromTree } from 'react-apollo/server';
+import { match, RouterContext } from 'react-router';
+import { StyleSheetServer } from 'aphrodite';
+import fs from 'fs';
+import path from 'path';
 
-import createApolloClient from '../../apollo_client'
-import Html from '../../ui/components/html'
-import routes from '../../routes'
-import log from '../../log'
-import { app as settings } from '../../../package.json'
+import createApolloClient from '../../apollo_client';
+import Html from '../../ui/components/html';
+import routes from '../../routes';
+import log from '../../log';
+import { app as settings } from '../../../package.json';
 
 const port = process.env.PORT || settings.apiPort;
 
 const apiUrl = `http://localhost:${port}/graphql`;
 
-var assetMap;
+let assetMap;
 
 export default (req, res) => {
   match({ routes, location: req.originalUrl }, (error, redirectLocation, renderProps) => {
@@ -43,19 +43,27 @@ export default (req, res) => {
         </ApolloProvider>
       );
 
-      StyleSheetServer.renderStatic(() => getDataFromTree(component).then(context => {
+      StyleSheetServer.renderStatic(() => getDataFromTree(component).then((context) => {
         res.status(200);
 
-        const { html, css } = StyleSheetServer.renderStatic(() => ReactDOM.renderToString(component));
+        const renderToString = () => ReactDOM.renderToString(component);
+        const { html, css } = StyleSheetServer.renderStatic(renderToString);
 
         if (__DEV__ || !assetMap) {
-          assetMap = JSON.parse(fs.readFileSync(path.join(settings.frontendBuildDir, 'assets.json')));
+          assetMap = JSON.parse(
+            fs.readFileSync(path.join(settings.frontendBuildDir, 'assets.json'))
+          );
         }
 
-        const page = <Html content={html} state={context.store.getState()} assetMap={assetMap} aphroditeCss={css}/>;
+        const page = <Html
+          content={html}
+          state={context.store.getState()}
+          assetMap={assetMap}
+          aphroditeCss={css}
+        />;
         res.send(`<!doctype html>\n${ReactDOM.renderToStaticMarkup(page)}`);
         res.end();
-      }).catch(e => log.error('RENDERING ERROR:', e)));
+      }).catch((e) => log.error('RENDERING ERROR:', e)));
     } else {
       res.status(404).send('Not found');
     }

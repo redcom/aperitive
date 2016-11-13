@@ -1,0 +1,7 @@
+while true
+do
+clear
+echo "lint runer"
+git diff master --name-only |grep ".js$"| xargs eslint -c .eslintrc --quiet --fix $1
+sleep 10
+done

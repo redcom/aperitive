@@ -1,0 +1,16 @@
+[include]
+.*/src/.*
+[ignore]
+[libs]
+  node_modules/iflow-lodash/index.js.flow
+  node_modules/iflow-immutable/index.js.flow
+  node_modules/iflow-react-router/index.js.flow
+  iflow/
+[options]
+  module.name_mapper='.*\.\(css\|scss\)$' -> '<PROJECT_ROOT>/flow/stub/css-modules.js'
+  module.name_mapper='.*\.\(svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow/stub/url-loader.js'
+  munge_underscores=true
+  esproposal.class_instance_fields=enable
+  esproposal.class_static_fields=enable
+  suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+  traces=2

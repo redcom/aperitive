@@ -1,9 +1,26 @@
 {
+  "compact": true,
   "presets": ["react", "es2015", "es2017"],
   "plugins": [
     "transform-runtime",
     "transform-decorators-legacy",
+    "transform-flow-strip-types",
     "transform-class-properties"
   ],
-  "only": ["*.js", "*.jsx"]
+  "only": ["*.js"],
+  "env": {
+    "__DEV__": {
+      "plugins": [
+        [ "babel-plugin-webpack-alias", { "config": "./webpack.config.js" } ]
+      ]
+    },
+    "production": {
+      "presets": [
+        "react-optimize"
+      ],
+      "plugins": [
+        "transform-flow-strip-types",
+      ],
+    }
+  },
 }

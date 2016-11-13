@@ -1,8 +1,8 @@
-import { apolloExpress } from 'apollo-server'
-import 'isomorphic-fetch'
+import { apolloExpress } from 'apollo-server';
+import 'isomorphic-fetch';
 
-import schema from '../api/schema'
-import Count from '../sql/count'
+import schema from '../api/schema';
+import Count from '../sql/count';
 
 export default apolloExpress(() => {
   return {

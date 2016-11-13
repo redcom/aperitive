@@ -1,9 +1,9 @@
-import React from 'react'
-import { StyleSheet, css } from 'aphrodite'
-import { Row } from 'react-bootstrap'
-import classnames from 'classnames'
+import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
+import { Row } from 'react-bootstrap';
+import classnames from 'classnames';
 
-import NavBar from './nav_bar'
+import NavBar from './nav_bar';
 
 const footerHeight = '40px';
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
     lineHeight: footerHeight,
-    height: footerHeight
+    height: footerHeight,
   },
 });
 

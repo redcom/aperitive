@@ -1,16 +1,14 @@
-import React from 'react'
-import { render } from 'react-dom'
-import Main from './main'
-import log from '../log'
+import React from 'react';
+import { render } from 'react-dom';
+import Main from './main';
+import log from '../log';
 
 const root = document.getElementById('content');
 
 if (__DEV__) {
   let frontendReloadCount = 0;
 
-  render((
-    <Main key={frontendReloadCount}/>
-  ), root);
+  render( <Main key={frontendReloadCount} />, root);
 
   if (module.hot) {
     module.hot.accept();
@@ -31,7 +29,5 @@ if (__DEV__) {
     });
   }
 } else {
-  render((
-    <Main/>
-  ), root);
+  render(<Main/>, root);
 }

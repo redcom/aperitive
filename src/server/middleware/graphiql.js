@@ -1,4 +1,4 @@
-import { graphiqlExpress } from 'apollo-server'
+import { graphiqlExpress } from 'apollo-server';
 
 export default graphiqlExpress({
   endpointURL: '/graphql',
@@ -7,5 +7,5 @@ export default graphiqlExpress({
    '  count {\n' +
    '    amount\n' +
    '  }\n' +
-   '}'
+   '}',
 });

@@ -1,19 +1,19 @@
 import express from 'express';
-import bodyParser from 'body-parser'
-import { SubscriptionServer } from 'subscriptions-transport-ws'
-import http from 'http'
-import path from 'path'
+import bodyParser from 'body-parser';
+import { SubscriptionServer } from 'subscriptions-transport-ws';
+import http from 'http';
+import path from 'path';
 
-import { app as settings } from '../../package.json'
-import log from '../log'
+import { app as settings } from '../../package.json';
+import log from '../log';
 
 // Hot reloadable modules
-var websiteMiddleware = require('./middleware/website').default;
-var graphiqlMiddleware = require('./middleware/graphiql').default;
-var graphqlMiddleware = require('./middleware/graphql').default;
-var subscriptionManager = require('./api/subscriptions').subscriptionManager;
+let websiteMiddleware = require('./middleware/website').default;
+let graphiqlMiddleware = require('./middleware/graphiql').default;
+let graphqlMiddleware = require('./middleware/graphql').default;
+let subscriptionManager = require('./api/subscriptions').subscriptionManager;
 
-var server;
+let server;
 
 const app = express();
 
@@ -27,7 +27,10 @@ app.use(bodyParser.json());
 
 app.use('/assets', express.static(settings.frontendBuildDir, {maxAge: '180 days'}));
 if (__DEV__) {
-  app.use('/assets', express.static(path.join(settings.backendBuildDir, 'assets'), {maxAge: '180 days'}));
+  app.use('/assets',
+    express.static(path.join(settings.backendBuildDir, 'assets'),
+    {maxAge: '180 days'})
+  );
 }
 
 app.use('/graphql', (...args) => graphqlMiddleware(...args));
@@ -37,7 +40,7 @@ app.use((...args) => websiteMiddleware(...args));
 server = http.createServer(app);
 
 new SubscriptionServer({
-  subscriptionManager
+  subscriptionManager,
 }, server);
 
 server.listen(port, () => {
@@ -45,7 +48,7 @@ server.listen(port, () => {
 });
 
 server.on('close', () => {
-  server = undefined;
+  server = null;
 });
 
 if (module.hot) {
@@ -59,10 +62,14 @@ if (module.hot) {
     module.hot.accept();
 
     // Reload reloadable modules
-    module.hot.accept('./middleware/website', () => { websiteMiddleware = require('./middleware/website').default; });
-    module.hot.accept('./middleware/graphql', () => { graphqlMiddleware = require('./middleware/graphql').default; });
-    module.hot.accept('./middleware/graphiql', () => { graphiqlMiddleware = require('./middleware/graphiql').default; });
-    module.hot.accept('./api/subscriptions', () => { subscriptionManager = require('./api/subscriptions').subscriptionManager; });
+    module.hot.accept('./middleware/website',
+      () => { websiteMiddleware = require('./middleware/website').default; });
+    module.hot.accept('./middleware/graphql',
+      () => { graphqlMiddleware = require('./middleware/graphql').default; });
+    module.hot.accept('./middleware/graphiql',
+      () => { graphiqlMiddleware = require('./middleware/graphiql').default; });
+    module.hot.accept('./api/subscriptions',
+      () => { subscriptionManager = require('./api/subscriptions').subscriptionManager; });
   } catch (err) {
     log(err.stack);
   }

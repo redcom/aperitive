@@ -1,15 +1,15 @@
-import ApolloClient from 'apollo-client'
+import ApolloClient from 'apollo-client';
 
-const createApolloClient = networkInterface => {
+const createApolloClient = (networkInterface) => {
   const params = {
-      dataIdFromObject: (result) => {
-        if (result.id && result.__typenamfe) { // eslint-disable-line no-underscore-dangle
-          return result.__typename + result.id; // eslint-disable-line no-underscore-dangle
-        }
-        return null;
-      },
-      networkInterface,
-    };
+    dataIdFromObject: (result) => {
+      if (result.id && result.__typenamfe) { // eslint-disable-line no-underscore-dangle
+        return result.__typename + result.id; // eslint-disable-line no-underscore-dangle
+      }
+      return null;
+    },
+    networkInterface,
+  };
   if (__CLIENT__) {
     params.initialState = window.__APOLLO_STATE__;
     // Temporary workaround for bug in AC@0.5.0: https://github.com/apollostack/apollo-client/issues/845
