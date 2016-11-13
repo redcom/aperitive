@@ -1,5 +1,5 @@
 
-## Aperitive wants to be a starter based on Apollo Stack.
+# Aperitive wants to be a starter based on Apollo Stack.
 A starter for developing react, graphql, apollo applications. Based on apollo-fullstack-starter-kit. — Edit
 
 
@@ -23,6 +23,7 @@ It reads docker-compose.yml and starts a container with Mongodb
   ```
   Install interfaces/libdef for found modules in package.json
 
+### Read [TODO] for a list of items you can find in this project
 
 ===
 
@@ -33,3 +34,4 @@ Copyright © 2016 This source code is licensed under the [MIT] license.
 
 [MIT]: LICENSE
 [README-STARTER]: README-STARTER.md
+[TODO]: TODO.md
