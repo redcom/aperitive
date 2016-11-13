@@ -1,9 +1,14 @@
+//@flow
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { Row } from 'react-bootstrap';
 import classnames from 'classnames';
 
 import NavBar from './nav_bar';
+
+type Props = {
+  children: Object,
+};
 
 const footerHeight = '40px';
 
@@ -17,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App({ children }) {
+export default function App({children}: Props) {
   return (
     <div>
       <NavBar>
@@ -33,7 +38,3 @@ export default function App({ children }) {
     </div>
   );
 }
-
-App.propTypes = {
-  children: React.PropTypes.element,
-};

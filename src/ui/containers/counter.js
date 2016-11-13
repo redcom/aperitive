@@ -1,3 +1,5 @@
+//@flow
+
 import React from 'react';
 import { graphql, compose, withApollo } from 'react-apollo';
 import ApolloClient from 'apollo-client';
@@ -5,6 +7,14 @@ import gql from 'graphql-tag';
 import update from 'react-addons-update';
 import { Row, Button } from 'react-bootstrap';
 import log from '../../log';
+
+type Props = {
+  loading: boolean,
+  count: Object,
+  updateCountQuery: Function,
+  addCount: Function,
+  client: Object,
+};
 
 const SUBSCRIPTION_QUERY = gql`
   subscription onCountUpdated {
@@ -15,6 +25,9 @@ const SUBSCRIPTION_QUERY = gql`
 `;
 
 class Counter extends React.Component {
+  props: Props;
+
+  subscriptionObserver = null;
 
   componentDidMount() {
     if (this.props.loading === false) {
@@ -76,13 +89,6 @@ class Counter extends React.Component {
   }
 }
 
-Counter.propTypes = {
-  loading: React.PropTypes.bool.isRequired,
-  count: React.PropTypes.object,
-  updateCountQuery: React.PropTypes.func,
-  addCount: React.PropTypes.func.isRequired,
-  client: React.PropTypes.instanceOf(ApolloClient).isRequired,
-};
 
 const AMOUNT_QUERY = gql`
   query getCount {

@@ -1,9 +1,4 @@
 declare module 'react-bootstrap' {
-  declare export class Glyphicon extends React.Component {}
-  declare export class MenuItem extends React.Component {}
-  declare export class NavDropdown extends React.Component {}
-  declare export class OverlayTrigger extends React.Component {}
-  declare export class Overlay extends React.Component {}
-  declare export class Tooltip extends React.Component {}
-  declare export class Popover extends React.Component {}
+  declare export class Row extends React.Component {}
+  declare export class Button extends React.Component {}
 }
