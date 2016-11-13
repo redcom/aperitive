@@ -7,14 +7,24 @@ A starter for developing react, graphql, apollo applications. Based on apollo-fu
 
 1. Read [README-STARTER] for quick start.
 
-## Additions made to the starter
+## Additions added to the starter
 
-1. Docker based database. Mongodb in addition to sqlite.
+- Docker based database. Mongodb in addition to sqlite.
 
   ```
   cd tools && docker-machine up
   ```
 It reads docker-compose.yml and starts a container with Mongodb
+
+- Flow-typed
+
+  ```
+  flow-typed install
+  ```
+  Install interfaces/libdef for found modules in package.json
+
+
+===
 
 I choose Aperitive name because it has a stimulating effect on the appetite for coding dreams.
 

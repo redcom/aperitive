@@ -1,4 +1,0 @@
-declare module 'react-bootstrap' {
-  declare export class Row extends React.Component {}
-  declare export class Button extends React.Component {}
-}
