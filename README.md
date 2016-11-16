@@ -3,7 +3,8 @@
 A starter for developing react, graphql, apollo applications. Based on apollo-fullstack-starter-kit. — Edit
 
 ## Statuses
-TESTS: ![[CODESHIP-STATUS]]
+[![Build Status]([CODESHIP-STATUS])]([CODESHIP-STATUS])
+
 
 ## Getting Started
 
