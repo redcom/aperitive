@@ -2,7 +2,7 @@
 /node_modules
 /build
 npm-debug.*
-dev-*.sqlite3
-prod-*.sqlite3
+*.sqlite3
 .DS_Store
 .tmp
+tmp
