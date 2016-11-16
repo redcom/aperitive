@@ -1,0 +1,2 @@
+const img: string = 'image';
+export default img;

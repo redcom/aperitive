@@ -12,7 +12,12 @@ const path = require('path');
 global.__DEV__ = process.env.NODE_ENV !== "production";
 const buildNodeEnv = __DEV__ ? 'development' : 'production';
 
-let basePlugins = [];
+let basePlugins = [
+  // decide if using global is a good option
+  // new webpack.ProvidePlugin({
+  //   Immutable: 'immutable',
+  // }),
+];
 
 if (!__DEV__) {
   basePlugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));

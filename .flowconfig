@@ -1,14 +1,15 @@
 [include]
 .*/src/.*
 [ignore]
+
 [libs]
   node_modules/iflow-lodash/index.js.flow
   node_modules/iflow-immutable/index.js.flow
   node_modules/iflow-react-router/index.js.flow
-  iflow/
+  flow-types
 [options]
-  module.name_mapper='.*\.\(css\|scss\)$' -> '<PROJECT_ROOT>/flow/stub/css-modules.js'
-  module.name_mapper='.*\.\(svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow/stub/url-loader.js'
+  module.name_mapper='.*\.\(css\|scss\)$' -> '<PROJECT_ROOT>/flow-stubs/CSSModules.js.flow'
+  module.name_mapper='.*\.\(jpg\|png\)$' -> '<PROJECT_ROOT>/flow-stubs/images.js.flow'
   munge_underscores=true
   esproposal.class_instance_fields=enable
   esproposal.class_static_fields=enable

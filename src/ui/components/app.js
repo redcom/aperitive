@@ -32,7 +32,7 @@ export default function App({children}: Props) {
       </div>
       <footer className={classnames('container', css(styles.footer))}>
         <Row className='text-center'>
-          &copy; 2016. Example Apollo App.
+          &copy; 2016. Aperitive
         </Row>
       </footer>
     </div>

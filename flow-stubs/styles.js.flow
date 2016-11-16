@@ -1,0 +1,2 @@
+const style: string = 'style';
+export default style;

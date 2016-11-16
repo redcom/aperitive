@@ -1,12 +1,23 @@
-import React, { PropTypes } from 'react';
+//@flow
 
-const Html = ({ content, state, assetMap, aphroditeCss }) => {
+import React from 'react';
+
+type Props = {
+  content: string,
+  state: Object,
+  assetMap: Object,
+  aphroditeCss: Object,
+};
+
+const Html = ({ content, state, assetMap, aphroditeCss }: Props) => {
   return (
     <html lang="en">
     <head>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Apollo Fullstack Starter Kit</title>
+      <title>
+      Aperitive isomorphic fullstack based on: graphql, apollo-client, apollo-server, react, webpack
+      </title>
       {!__DEV__ &&
         <link
           rel="stylesheet"
@@ -33,13 +44,6 @@ const Html = ({ content, state, assetMap, aphroditeCss }) => {
     </body>
     </html>
   );
-};
-
-Html.propTypes = {
-  content:      PropTypes.string.isRequired,
-  state:        PropTypes.object.isRequired,
-  assetMap:     PropTypes.object.isRequired,
-  aphroditeCss: PropTypes.object.isRequired,
 };
 
 export default Html;
