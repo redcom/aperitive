@@ -1,10 +1,12 @@
 #!/bin/sh
 
+echo $NODE_ENV
+
 if [ "$NODE_ENV" = production ];
-  then echo "production" && npm run clean && npm run build && npm run migrate && npm run seed;
+  then npm run clean && npm run build && npm run migrate && npm run seed;
 fi
 
-if [ "$NODE_ENV" = test ];
-  then echo "test" && npm run migrate && npm run seed;
+if [ "$NODE_ENV" != production ];
+  then npm run migrate && npm run seed;
 fi
 
