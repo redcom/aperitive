@@ -2,6 +2,8 @@
 # Aperitive wants to be a starter based on Apollo Stack.
 A starter for developing react, graphql, apollo applications. Based on apollo-fullstack-starter-kit. — Edit
 
+## Statuses
+[CODESHIP-STATUS]
 
 ## Getting Started
 
@@ -35,3 +37,5 @@ Copyright © 2016 This source code is licensed under the [MIT] license.
 [MIT]: LICENSE
 [README-STARTER]: README-STARTER.md
 [TODO]: TODO.md
+[CODESHIP-STATUS] https://codeship.com/projects/81085e90-8e67-0134-6a22-5e4cacc66032/status?branch=master
+

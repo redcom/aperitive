@@ -17,14 +17,14 @@
     "build": "babel-node tools/webpack.run build",
     "clean": "rm -rf $npm_package_app_frontendBuildDir $npm_package_app_backendBuildDir",
     "start": "if [ \"$NODE_ENV\" = production ]; then node --harmony $npm_package_app_backendBuildDir; else babel-node tools/webpack.run watch; fi",
-    "test": "mocha-webpack --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint && npm run flowcheck",
+    "test": "NODE_ENV=test mocha-webpack --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint && npm run flowcheck",
     "test:watch": "mocha-webpack -w --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint",
     "lint": "eslint -c .eslintrc --fix --ext js src",
     "flowcheck": "flow check",
     "seed": "knex seed:run",
     "migrate": "knex migrate:latest",
     "reinstall": "rm -rf npm-shrinkwrap.json node_modules tmp .tmp; npm clean cache; npm install",
-    "postinstall": "if [ \"$NODE_ENV\" = production ]; then npm run clean && npm run build && npm run migrate && npm run seed; fi"
+    "postinstall": "./tools/postInstallHook.sh"
   },
   "repository": {
     "type": "git",
