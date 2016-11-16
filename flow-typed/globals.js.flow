@@ -1,3 +1,6 @@
 // define globals variables which can be checked by flow
 
 declare var __DEV__: bool;
+declare var module: {
+  hot: Function,
+};

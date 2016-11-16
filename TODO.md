@@ -4,6 +4,7 @@
 - [ ] add passport for login via graphql and mongodb
 - [ ] test resolve grapql queries with mongodb
 - [ ] create pre-push-hook to run tests, eslint, flow check
+- [ ] replace webstockets with https://github.com/uWebSockets/uWebSockets
 - [ ] add framework to run integration tests
 - [ ] add docker machine with jenkins and configure it to run the tests
 - [x] add Ramda and Immutable.js to make the developmnent more functional

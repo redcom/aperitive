@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { graphql, compose, withApollo } from 'react-apollo';
-import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 import update from 'react-addons-update';
 import { Row, Button } from 'react-bootstrap';
@@ -25,6 +24,7 @@ const SUBSCRIPTION_QUERY = gql`
 `;
 
 class Counter extends React.Component {
+
   props: Props;
 
   subscriptionObserver = null;
@@ -88,7 +88,6 @@ class Counter extends React.Component {
     }
   }
 }
-
 
 const AMOUNT_QUERY = gql`
   query getCount {

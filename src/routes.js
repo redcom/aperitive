@@ -1,8 +1,10 @@
-import React from 'react'
-import { Route, IndexRedirect } from 'react-router'
+//@flow
 
-import Counter from './ui/containers/counter'
-import App from './ui/components/app'
+import React from 'react';
+import { Route, IndexRedirect } from 'react-router';
+
+import Counter from './ui/containers/counter';
+import App from './ui/components/app';
 
 export default (
   <Route path="/" component={App}>
