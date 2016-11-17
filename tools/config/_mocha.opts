@@ -1,0 +1,5 @@
+--require babel-register
+--require tools/testUtils
+--recursive
+--bail
+src/**/*.test.js

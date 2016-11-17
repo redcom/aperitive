@@ -1,0 +1,16 @@
+instrumentation:
+  excludes:
+    - 'coverage/**/*.js'
+    - 'tools/*.js'
+    - 'flow-typed/**/*'
+reporting:
+  print: summary
+  reports:
+    - lcov
+  dir: ./coverage
+  watermarks:
+    statements: [50, 100]
+    lines: [50, 100]
+    functions: [50, 100]
+    branches: [50, 100]
+verbose: false 
