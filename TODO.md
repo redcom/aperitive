@@ -7,7 +7,8 @@
 - [ ] replace webstockets with https://github.com/uWebSockets/uWebSockets
 - [ ] add framework to run integration tests
 - [ ] add docker machine with jenkins and configure it to run the tests
-- [x] add codeship.com integration to run tests on push
+- [x] add circleCI integration to run tests and output status
+- [x] add codeship.com integration to run tests on output status
 - [x] add Ramda and Immutable.js to make the developmnent more functional
 - [x] add .editorconfig file
 - [x] add flow type check and script to automatically run flowCheck
