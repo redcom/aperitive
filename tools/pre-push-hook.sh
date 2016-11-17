@@ -7,15 +7,15 @@ NC='\033[0m'
 
 function log {
   printf "\n\n $1 \n\n";
-  exit 1;
+  exit $2;
 }
 
 npm run test
 if [ "$?" != "0" ]; then
-  log "${RED}Not permitted to push. Fix above issues.${NC}";
+  log "${RED}Not permitted to push. Fix above issues.${NC}" 1;
 fi
 
-log "${BLUE}GOOD TO GO${NC}";
+log "${BLUE}GOOD TO GO${NC}" 0;
 
 
 
