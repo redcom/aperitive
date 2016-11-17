@@ -12,7 +12,8 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**.js"
-  - "**.jsx"
+  - "src/**.js"
+  - "src/**.jsx"
 exclude_paths:
 - "**.test.js"
+- "**/tools/"
