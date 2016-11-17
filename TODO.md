@@ -3,13 +3,13 @@
 - [ ] prepare layout
 - [ ] add passport for login via graphql and mongodb
 - [ ] test resolve grapql queries with mongodb
-- [ ] create pre-push-hook to run tests, eslint, flow check
+- [x] create pre-push-hook to run tests, eslint, flow check
 - [ ] replace webstockets with https://github.com/uWebSockets/uWebSockets
 - [ ] add framework to run integration tests
 - [ ] add docker machine with jenkins and configure it to run the tests
 - [x] add #slack integration https://aperitive.slack.com/archives/aperitive
 - [x] add codacy.com integration to report code coverage
-- [ ] add codeclimate.com integration
+- [x] add codeclimate.com integration
 - [x] add circleCI integration to run tests and output status
 - [x] add codeship.com integration to run tests on output status
 - [x] add Ramda and Immutable.js to make the developmnent more functional

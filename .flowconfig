@@ -6,7 +6,7 @@
   node_modules/iflow-lodash/index.js.flow
   node_modules/iflow-immutable/index.js.flow
   node_modules/iflow-react-router/index.js.flow
-  flow-types
+  flow-typed
 [options]
   module.name_mapper='.*\.\(css\|scss\)$' -> '<PROJECT_ROOT>/flow-stubs/CSSModules.js.flow'
   module.name_mapper='.*\.\(jpg\|png\)$' -> '<PROJECT_ROOT>/flow-stubs/images.js.flow'

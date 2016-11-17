@@ -13,36 +13,46 @@
     "node": "6.6.0",
     "npm": "3.10.3"
   },
+  "pre-push": [
+    "pre-push-hook"
+  ],
   "scripts": {
     "build": "babel-node tools/webpack.run build",
     "clean": "rm -rf $npm_package_app_frontendBuildDir $npm_package_app_backendBuildDir",
-    "start": "if [ \"$NODE_ENV\" = production ]; then node --harmony $npm_package_app_backendBuildDir; else babel-node tools/webpack.run watch; fi",
-    "test": "./tools/postInstallHook.sh && mocha-webpack --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint && npm run flowcheck",
-    "test:watch": "mocha-webpack -w --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint",
-    "lint": "eslint -c .eslintrc --fix --ext js src",
     "coverage": "istanbul cover --config tools/config/_istanbul.yml _mocha -- --opts tools/config/_mocha.opts && ./tools/reportCoverage.sh",
     "flowcheck": "flow check",
-    "seed": "knex seed:run",
+    "lint": "eslint -c .eslintrc --fix --ext js src",
     "migrate": "knex migrate:latest",
+    "postinstall": "./tools/postInstallHook.sh",
+    "pre-push-hook": "./tools/pre-push-hook.sh",
     "reinstall": "rm -rf npm-shrinkwrap.json node_modules tmp .tmp; npm clean cache; npm install",
-    "postinstall": "./tools/postInstallHook.sh"
+    "seed": "knex seed:run",
+    "start": "if [ \"$NODE_ENV\" = production ]; then node --harmony $npm_package_app_backendBuildDir; else babel-node tools/webpack.run watch; fi",
+    "test": "./tools/postInstallHook.sh && mocha-webpack --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint && npm run flowcheck",
+    "test:watch": "mocha-webpack -w --webpack-config tools/webpack.config.js --full-trace --exit 'src/**/*.test.js' && npm run lint"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sysgears/apollo-fullstack-starter-kit.git"
+    "url": "git@github.com:redcom/aperitive.git"
   },
   "bugs": {
-    "url": "https://github.com/sysgears/apollo-fullstack-starter-kit/issues"
+    "url": "https://github.com/redcom/aperitive/issues"
   },
-  "homepage": "https://github.com/sysgears/apollo-fullstack-starter-kit",
+  "homepage": "https://github.com/redcom/aperitive",
   "keywords": [
     "apollo",
     "fullstack",
     "starter",
     "graphql",
-    "react"
+    "react",
+    "ramda",
+    "webpack",
+    "flowtype",
+    "immutable",
+    "sqlite3",
+    "docker"
   ],
-  "author": "SysGears INC",
+  "author": "redcom",
   "license": "MIT",
   "dependencies": {
     "aphrodite": "^1.0.0",
@@ -114,6 +124,7 @@
     "mocha-lcov-reporter": "^1.2.0",
     "mocha-webpack": "^0.7.0",
     "node-sass": "^3.10.0",
+    "pre-push": "^0.1.1",
     "raw-loader": "^0.5.1",
     "react-addons-perf": "^15.1.0",
     "resolve-url-loader": "^1.6.0",
