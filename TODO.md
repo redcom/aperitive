@@ -8,7 +8,7 @@
 - [ ] add framework to run integration tests
 - [ ] add docker machine with jenkins and configure it to run the tests
 - [x] add #slack integration https://aperitive.slack.com/archives/aperitive
-- [x] add codacy.com integration
+- [x] add codacy.com integration to report code coverage
 - [ ] add codeclimate.com integration
 - [x] add circleCI integration to run tests and output status
 - [x] add codeship.com integration to run tests on output status
