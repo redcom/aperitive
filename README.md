@@ -3,9 +3,9 @@
 A starter for developing react, graphql, apollo applications. Based on apollo-fullstack-starter-kit. — Edit
 
 ## Statuses
-[![Build Status](https://codeship.com/projects/81085e90-8e67-0134-6a22-5e4cacc66032/status?branch=master)](https://codeship.com/projects/81085e90-8e67-0134-6a22-5e4cacc66032/status?branch=master)
+[![Tests CODESHIP Build Status](https://codeship.com/projects/81085e90-8e67-0134-6a22-5e4cacc66032/status?branch=master)](https://codeship.com/projects/81085e90-8e67-0134-6a22-5e4cacc66032/status?branch=master)
 [![CircleCI](https://circleci.com/gh/redcom/aperitive/tree/master.svg?style=svg)](https://circleci.com/gh/redcom/aperitive/tree/master)
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bd8b6bef7fa547ab98ffaf3c85cd3ad3)](https://www.codacy.com/app/red-com/aperitive?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=redcom/aperitive&amp;utm_campaign=Badge_Grade)
 
 ## Getting Started
 
