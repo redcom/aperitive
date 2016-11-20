@@ -1,0 +1,16 @@
+version: "2.0"
+services: 
+  jenkins:
+    image: jenkins:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+    - ./docker-volumes/jenkins:/var/jenkins_home
+# uncomment bellow when attaching slaves
+#   - "50000:50000"
+#   links:
+#    - nodejs-slave
+# nodejs-slave:
+#   image: pcvolkmer/jenkins-slave-nodejs:7.0
+#   ports:
+#     - "50001:50001"

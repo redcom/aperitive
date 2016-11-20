@@ -6,3 +6,4 @@ npm-debug.*
 .DS_Store
 .tmp
 tmp
+tools/docker-volumes/jenkins/*

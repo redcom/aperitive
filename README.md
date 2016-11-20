@@ -13,13 +13,7 @@ A starter for developing react, graphql, apollo applications. Based on apollo-fu
 1. Read [README-STARTER] for quick start.
 
 ## Additions added to the starter
-
-- Docker based database. Mongodb in addition to sqlite.
-
-  ```
-  cd tools && docker-machine up
-  ```
-It reads docker-compose.yml and starts a container with Mongodb
+>read Docker[DOCKER] documentation
 
 - Flow-typed
 
@@ -40,4 +34,4 @@ Copyright © 2016 This source code is licensed under the [MIT] license.
 [MIT]: LICENSE
 [README-STARTER]: README-STARTER.md
 [TODO]: TODO.md
-
+[DOCKER]: docs/DOCKER.md
