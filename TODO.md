@@ -5,7 +5,7 @@
 - [ ] test resolve grapql queries with mongodb
 - [x] create pre-push-hook to run tests, eslint, flow check
 - [ ] replace webstockets with https://github.com/uWebSockets/uWebSockets
-- [ ] add framework to run integration tests
+- [x] add framework to run integration tests
 - [x] add docker machine with jenkins and configure it to run the tests
 - [x] add #slack integration https://aperitive.slack.com/archives/aperitive
 - [x] add codacy.com integration to report code coverage

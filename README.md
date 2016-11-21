@@ -14,6 +14,7 @@ A starter for developing react, graphql, apollo applications. Based on apollo-fu
 
 ## Additions added to the starter
  Read [DOCKER] documentation to find out what docker images/containers are used
+ Read [INTEGRATION-TESTS] documentation to learn about the integration/acceptance test stack
 
 - Flow-typed
 
@@ -35,3 +36,4 @@ Copyright © 2016 This source code is licensed under the [MIT] license.
 [README-STARTER]: README-STARTER.md
 [TODO]: TODO.md
 [DOCKER]: docs/Docker.md
+[INTEGRATION-TESTS]: docs/IntegrationTests.md
