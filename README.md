@@ -13,8 +13,9 @@ A starter for developing react, graphql, apollo applications. Based on apollo-fu
 1. Read [README-STARTER] for quick start.
 
 ## Additions added to the starter
- Read [DOCKER] documentation to find out what docker images/containers are used
- Read [INTEGRATION-TESTS] documentation to learn about the integration/acceptance test stack
+
+[x] Read [DOCKER] documentation to find out what docker images/containers are used
+[x] Read [INTEGRATION-TESTS] documentation to learn about the integration/acceptance test stack
 
 - Flow-typed
 
