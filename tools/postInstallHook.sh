@@ -7,6 +7,7 @@ if [ "$NODE_ENV" = production ];
 fi
 
 if [ "$NODE_ENV" != production ] && [ ! -f "dev-db.sqlite3" ];
-  then npm run migrate && npm run seed;
+  then npm run migrate && \ # create new sqlite database
+    npm run seed && \ # populate information into database
+    ./node_modules/.bin/selenium-standalone install; # install selenium drivers to run integration tests
 fi
-

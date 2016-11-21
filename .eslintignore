@@ -3,3 +3,4 @@ tools
 build
 flow-stubs
 flow-typed
+wdio.conf.js
