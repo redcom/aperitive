@@ -33,7 +33,7 @@ describe('webdriver.io page', ()=> {
       expect(status).to.be.true;
     };
 
-    links.values.map(testLink);
+    links.value.map(testLink);
 
   });
 });
