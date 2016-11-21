@@ -25,6 +25,9 @@ Integration/Accepance tests are to be written into **./test/specs/** folder. Thi
 * Stop Selenium using script **./tools/kill-selenium.sh**
 * Start **./tools/test-ui.sh** which starts the selenium again and runs test suite
 
+###Known issues
+* If chromedriver is not running when starting selenium-standalone than you need to specify its version
+Check **./tools/start-selenium.sh**
 
 ## Selenium hub
 List of running instances: **http://127.0.0.1:4444/wd/hub/static/resource/hub.html**
