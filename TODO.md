@@ -1,7 +1,8 @@
 ### List of aperitives
 
 - [ ] prepare layout
-- [ ] add passport for login via graphql and mongodb
+- [x] Add Auth0 for user creation and authorization
+- [ ] ~~add passport for login via graphql and mongodb~~
 - [ ] test resolve grapql queries with mongodb
 - [x] create pre-push-hook to run tests, eslint, flow check
 - [ ] replace webstockets with https://github.com/uWebSockets/uWebSockets
