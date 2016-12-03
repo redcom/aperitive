@@ -7,32 +7,48 @@ import { withRouter } from 'react-router';
 type Props = {
   clientId: string,
   domain: string,
-}
-
-type Context = {
-  router: Object,
-}
+};
+type AuthResult = {
+  idToken: string,
+};
 
 class LoginAuth0 extends React.Component {
   props: Props;
-  context: Context;
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired,
+  };
 
   lock = new Auth0Lock(
     this.props.clientId,
     this.props.domain,
     {
-      allowedConnections: ["Username-Password-Authentication","google-oauth2", "facebook"],
+      allowedConnections: [
+        "Username-Password-Authentication",
+        "google-oauth2",
+        "facebook",
+      ],
       rememberLastLogin: false,
       theme: {},
-      languageDictionary: {"title":"Auth0"},
+      languageDictionary: {"title":"Aperitive"},
       language: "en",
     }
   );
 
+  fetchAndStoreProfile({idToken}: AuthResult) {
+    this.lock.getProfile(idToken, (error, profile) => {
+      if (error) {
+        return;
+      }
+      window.localStorage.setItem('account.auth0IdAuthorization', idToken);
+      window.localStorage.setItem('account.profile', JSON.stringify(profile));
+      this.context.router.replace(`/profile`);
+    });
+  }
+
   componentDidMount() {
     this.lock.on('authenticated', (authResult) => {
-      window.localStorage.setItem('auth0IdAuthorization', authResult.idToken);
-      this.context.router.replace(`/account`);
+      this.fetchAndStoreProfile(authResult);
     });
   }
 

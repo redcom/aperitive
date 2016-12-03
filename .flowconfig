@@ -1,7 +1,7 @@
 [include]
 .*/src/.*
 [ignore]
-
+  .*/node_modules/.*
 [libs]
   node_modules/iflow-lodash/index.js.flow
   node_modules/iflow-immutable/index.js.flow

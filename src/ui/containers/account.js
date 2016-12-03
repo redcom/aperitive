@@ -1,40 +1,32 @@
 // @flow
 import React from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 import { withRouter } from 'react-router';
 import { Row, Button } from 'react-bootstrap';
+import { isNil } from 'ramda';
 import LoginAuth0 from './LoginAuth0';
 import { auth0Config } from '../../config';
 
 type Props = {
   loading: boolean,
-  count: Object,
-  updateCountQuery: Function,
-  addCount: Function,
-  client: Object,
-  data: {
-    user: Object,
-  }
 };
 
 class Account extends React.Component {
 
   props: Props;
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
-  }
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired,
+  };
 
   isLoggedIn() {
-    return this.props.data.user;
+    return (__CLIENT__ && !isNil(global.localStorage.getItem('account.auth0IdAuthorization')));
   }
 
   logout = () => {
-    window.localStorage.removeItem('auth0IdAuthorization');
-    window.location.reload();
+    if (__CLIENT__) {
+      global.localStorage.removeItem('account.auth0IdAuthorization');
+      global.location.reload();
+    }
   }
 
   renderLoggedIn() {
@@ -46,19 +38,19 @@ class Account extends React.Component {
   }
 
   renderLoggedOut() {
+    if (!__CLIENT__) return null;
     return (
-       <div>
-        <LoginAuth0
-          clientId={auth0Config.clientId}
-          domain={auth0Config.domain}
-        />
-      </div>
+       <Row>
+       <LoginAuth0
+         clientId={auth0Config.clientId}
+         domain={auth0Config.domain}
+       />
+      </Row>
     );
   }
 
   render() {
-    const { loading } = this.props;
-    if (loading) {
+    if (this.props.loading) {
       return (
         <Row className="text-center">
           Loading...
@@ -73,12 +65,4 @@ class Account extends React.Component {
   }
 }
 
-const USER_QUERY = gql`
-query {
-  count {
-    amount
-  }
-}
-`;
-
-export default graphql(USER_QUERY, { options: {forceFetch: true }})(withRouter(Account));
+export default withRouter(Account);

@@ -5,6 +5,8 @@ import { Route, IndexRedirect } from 'react-router';
 
 import Counter from './ui/containers/counter';
 import Account from './ui/containers/account';
+import Profile from './ui/containers/profile';
+
 import App from './ui/components/app';
 
 export default (
@@ -12,5 +14,6 @@ export default (
     <IndexRedirect to="/counter" />
     <Route path="counter" component={Counter} />
     <Route path="account" component={Account} />
+    <Route path="profile" component={Profile} />
   </Route>
 );
