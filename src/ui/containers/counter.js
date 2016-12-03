@@ -1,4 +1,4 @@
-//@flow
+// @flow
 
 import React from 'react';
 import { graphql, compose, withApollo } from 'react-apollo';

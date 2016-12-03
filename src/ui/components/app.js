@@ -25,8 +25,7 @@ const styles = StyleSheet.create({
 export default function App({children}: Props) {
   return (
     <div>
-      <NavBar>
-      </NavBar>
+      <NavBar />
       <div className="container">
         {children}
       </div>
